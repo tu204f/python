@@ -3,14 +3,16 @@ from tkinter import *
 def clicked():
     res = "Привет {}".format(txt.get())
     lbl.configure(text=res)
+    txt.focus()
 
 window = Tk()
 window.title("Добро пожаловать в приложение PythonRu")
 
-lbl = Label(window,text="Привет",font=("Arial Bold",50))
+lbl = Label(window,text="Привет",font=("Arial Bold",20))
 lbl.grid(column=0,row=0)
 
-txt = Entry(window,width=10)
+## txt = Entry(window, width=10, state='disabled')
+txt = Entry(window, width=10)
 txt.grid(column=1,row=0)
 
 btn = Button(window, text="Не нажимать!", bg="black", fg="red", command=clicked)
